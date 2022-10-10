@@ -1,0 +1,12 @@
+# запрет листинга каталогов
+#Options -MultiViews
+
+# переопределения индексного файла
+#DirectoryIndex login.php
+
+#IndexOptions FancyIndexing ScanHTMLTitles
+
+
+Order Deny,Allow
+Deny from all
+#Allow 
