@@ -44,10 +44,16 @@ if (!preg_match("/^[a-zа-яё][a-zа-яё]*[a-zа-яё]$/i", $name)) {
     die();
 }
 
-if (mb_strlen($name) < 3 ) {
-    $_SESSION['messageName'] = 'Поле с именем должно иметь не мение 2 букв';
+if (mb_strlen($name) < 2 ) {
+    $_SESSION['messageName'] = 'Поле с именем должно иметь не мение 2 букв, но не более 3';
     header('Location: ../register.php');
-    die('Поле с именем должно иметь не мение 2 букв');
+    die('Поле с именем должно иметь не мение 2 букв, но не более 3');
+}
+
+if (mb_strlen($name) > 3) {
+    $_SESSION['messageName'] = 'Поле с именем должно иметь не мение 2 букв, но не более 3';
+    header('Location: ../register.php');
+    die('Поле с именем должно иметь не мение 2 букв, но не более 3');
 }
 
 if (!preg_match("/^[a-zа-яё\d][a-zа-яё\d]*[a-zа-яё\d]$/i", $login)) {
