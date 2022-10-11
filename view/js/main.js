@@ -126,6 +126,7 @@ console.log(name.length);
                 $('.msglog').text('Поле с логином не должно иметь пробелов');
                 }
         }
+
     for (var i = 0, n = password.length; i < n; i++) {
         if (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90 || password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122 || password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57) { 
             $('.msgpas').text('');
@@ -158,8 +159,12 @@ console.log(name.length);
             $('.msgemail').text('Не правильно введен Email');
         }
 
-        if (name.length < 3) {
-            $('.msgname').text('Поле с именем должно иметь не мение 3 букв');
+        if (name.length < 2 ) {
+            $('.msgname').text('Поле с именем должно иметь не мение 2 букв, но не более 3');
+        }
+
+        if (name.length > 3 ) {
+            $('.msgname').text('Поле с именем должно иметь не мение 2 букв, но не более 3');
         }
 
         if (login.length < 6) {
